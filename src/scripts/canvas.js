@@ -53,7 +53,7 @@ class canvas{
         } 
 
         this.buttons();
-        // this.shuffle();
+        this.shuffle();
         document.getElementById("shuffle-btn").addEventListener("click", () => {
             location.reload();
             return false;
