@@ -10,12 +10,117 @@
 </head>
 
 <body>
+    
+
     <script src="./dist/main.js"></script>
+    <nav id="nav">
+        
+        <h1>PicShredder</h1>
 
-    <h1>PicShredder</h1>
-    <img src="./dist/images/husky.jpeg" style="width: 500px; height: 500px;" id="parent-img">
-    <canvas id="image" width="500" height="500"></canvas>
+        
+        <div class="logo">
+           
+            <a href="https://github.com/AndyJia4700" >
+            <div class="contact-github"></div>
+            </a>
 
+            <a href="https://www.linkedin.com/in/andy-jia-89a261114/">
+                <div class="contact-linkedin"></div> 
+            </a>
+
+            <a href="">
+                <div class="contact-angellist"></div>
+            </a>
+        </div>
+    </nav>
+
+
+    <div id="instruction">
+        <div id="cute">
+        </div>
+    </div>
+
+
+    <div class="main-div">
+
+        
+        
+        <!-- <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
+        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+        <p><img id="parent-img" width="200" /></p>
+
+    
+        <script>
+            
+            const loadFile = function (event) {
+                const image = document.getElementById('parent-img');
+                image.src = URL.createObjectURL(event.target.files[0]);
+                image.append('src', image.src)
+            };
+            
+        </script> -->
+        
+
+        <script>
+            window.onload = function(){
+                const cute = document.getElementById("cute");
+                document.getElementById("nav").onmousemove = function (event) {
+                    event = event || window.event;
+                    const left = event.clientX;
+                    const top = event.clientY;
+
+                    cute.style.left = left + "px";
+                    cute.style.top = top + "px";
+                }
+            }
+        </script>
+
+        <div class="canvas-picture">
+            <img src="./dist/images/panda.jpg" style="width: 500px; height: 500px;" id="parent-img">
+            <canvas id="image" width="500" height="500"></canvas>
+        </div>
+        
+        <div class="dash-div">
+            <div id="dashboard"> 
+                <div class="slidecontainer">
+                    <h4 class="slider-title">Fast</h4>
+                    <input type="range" min="30" max="300" value="100" class="slider" id="speed">
+                    <h4 class="slider-title">Slow</h4>
+                </div>
+            </div>
+            <div id="sort-btns">
+                <div id="controll">
+                    <select id="grid" class="sort-reset">
+                        <option value="3">3x3</option>
+                        <option value="6">6x6</option>
+                        <option value="9">9x9</option>
+                        <option value="12">12x12</option>
+                        <option value="15">15x15</option>
+                        <option value="18">18x18</option>
+                        <option value="21">21x21</option>
+                        <option value="24">24x24</option>
+                    </select>
+                </div>
+
+                <button id="shuffle-btn" class="sort-reset">SET / RESET</button>
+            </div>
+        </div>
+
+        
+        
+        
+    </div>
+
+    
+    
+
+    <!-- <select id="speed" onchange="return false">
+        <option value="30">Super Fast</option>
+        <option value="100">Fast</option>
+        <option value="300">Normal</option>
+    </select> -->
+
+    
 </body>
 
 </html>
