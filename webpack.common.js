@@ -52,7 +52,7 @@
                 // by default it uses publicPath in webpackOptions.output
                 name: "[name].[ext]",
                 outputPath: "images/",
-                publicPath: "/dist/images/"
+                publicPath: "dist/images/"
                 }
             }
             ]
