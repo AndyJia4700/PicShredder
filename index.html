@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    
 
     <script src="./dist/main.js"></script>
     <nav id="nav">
@@ -34,16 +33,12 @@
         </div>
     </nav>
 
-
-    <div id="instruction">
-        <div id="cute">
-        </div>
-    </div>
-
-
     <div class="main-div">
 
-        
+        <div id="instruction">
+            <div id="cute">
+            </div>
+        </div>
         
         <!-- <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
         <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
@@ -64,7 +59,7 @@
         <script>
             window.onload = function(){
                 const cute = document.getElementById("cute");
-                document.getElementById("nav").onmousemove = function (event) {
+                document.getElementById("instruction").onmousemove = function (event) {
                     event = event || window.event;
                     const left = event.clientX;
                     const top = event.clientY;
@@ -107,12 +102,8 @@
         </div>
 
         
-        
-        
     </div>
 
-    
-    
 
     <!-- <select id="speed" onchange="return false">
         <option value="30">Super Fast</option>

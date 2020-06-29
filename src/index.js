@@ -1,4 +1,5 @@
-import '../src/styles/index.scss'
+// import '../src/styles/index.scss'
+
 import canvasE from './scripts/canvas'
 
 window.addEventListener("DOMContentLoaded", main);

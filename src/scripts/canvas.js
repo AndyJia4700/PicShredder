@@ -3,13 +3,15 @@ class canvas{
     constructor(){
         this.canvas = document.getElementById('image');
         this.ctx = this.canvas.getContext('2d');
+        
         this.chooseImage();
     }
 
     chooseImage(){
         const img = document.getElementById('parent-img');
+        // debugger;
         img.addEventListener('change', function(){
-            localStorage.setItem('setImg', this.src);
+            Window.localStorage.setItem('setImg', img.src);
         });
         let src = localStorage.getItem('setImg');
         if (src) img.src = src;
@@ -23,7 +25,7 @@ class canvas{
     chooseGrid(){
         const grid = document.getElementById("grid");
         grid.addEventListener("change", function () {
-            localStorage.setItem("selValue", this.value);
+            localStorage.setItem("selValue", grid.value);
         });
 
         let val = localStorage.getItem("selValue");
@@ -42,8 +44,9 @@ class canvas{
         
         const ul = document.createElement('ul')
         ul.id = "child-img-ul"
-        // document.body.append(ul);
+        
         document.getElementById("dashboard").append(ul);
+        console.log(this.canvas);
         
         for (let x = 0; x < grid; x++) {
             for (let y = 0; y < grid; y++) {
@@ -89,6 +92,9 @@ class canvas{
         for (let idx = 1; idx < shuffled.length; idx++) {
           arr = arr.concat([[shuffled[idx].className, shuffled[idx]]]);
         }
+
+        console.log(shuffled);
+        
 
         document.getElementById("quick-btn").addEventListener("click", () => {
           this.quickSort(arr);
@@ -189,9 +195,10 @@ class canvas{
     }
 
     shuffle(){
+        
         const ul = document.querySelector('ul');
         for (let i = ul.children.length; i >= 0; i--) {
-            ul.appendChild(ul.children[Math.random() * i | 0]);
+            ul.append(ul.children[Math.random() * i | 0]);
         }
     }
 
