@@ -46,7 +46,7 @@ class canvas{
         ul.id = "child-img-ul"
         
         document.getElementById("dashboard").append(ul);
-        console.log(this.canvas);
+        
         
         for (let x = 0; x < grid; x++) {
             for (let y = 0; y < grid; y++) {
@@ -92,8 +92,6 @@ class canvas{
         for (let idx = 1; idx < shuffled.length; idx++) {
           arr = arr.concat([[shuffled[idx].className, shuffled[idx]]]);
         }
-
-        console.log(shuffled);
         
 
         document.getElementById("quick-btn").addEventListener("click", () => {
