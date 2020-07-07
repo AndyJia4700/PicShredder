@@ -93,17 +93,20 @@ class canvas{
           arr = arr.concat([[shuffled[idx].className, shuffled[idx]]]);
         }
         
-
+        const bgm = document.getElementById("bgm");
         document.getElementById("quick-btn").addEventListener("click", () => {
-          this.quickSort(arr);
+            this.quickSort(arr);
+            bgm.play();
         });
 
         document.getElementById("bubble-btn").addEventListener("click", () => {
-          this.bubbleSort(arr);
+            this.bubbleSort(arr);
+            bgm.play();
         });
 
         document.getElementById("merge-btn").addEventListener("click", () => {
-          this.mergeSort(arr);
+            this.mergeSort(arr);
+            bgm.play();
         });
     }
 
@@ -167,7 +170,9 @@ class canvas{
         }
         merged = merged.concat(left, right);
         this.restore(merged);
+        
         return merged;
+        // bgm.pause();
     }
 
     
