@@ -3,7 +3,6 @@ class canvas{
     constructor(){
         this.canvas = document.getElementById('image');
         this.ctx = this.canvas.getContext('2d');
-        
         this.chooseImage();
     }
 

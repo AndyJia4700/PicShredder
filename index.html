@@ -36,8 +36,9 @@
     <div class="main-div">
 
         <div id="instruction">
-            <div id="cute">
+            <div class="cute">
             </div>
+            <!-- <script src="./src/scripts/sound.js"></script> -->
         </div>
         
         <!-- <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
@@ -58,15 +59,25 @@
 
         <script>
             window.onload = function(){
-                const cute = document.getElementById("cute");
-                document.getElementById("instruction").onmousemove = function (event) {
-                    event = event || window.event;
-                    const left = event.clientX;
-                    const top = event.clientY;
+                const cute = document.querySelector(".cute");
 
-                    cute.style.left = left + "px";
-                    cute.style.top = top + "px";
-                }
+                document.addEventListener('mousemove', e=>{
+                    e = e || window.e;
+                    const left = e.clientX - 15;
+                    const top = e.clientY - 15;
+
+                    cute.setAttribute(
+                        "style",
+                        "top: "+(e.pageY-20)+"px; left: "+(e.pageX-20)+"px;"
+                    )
+                })
+
+                document.addEventListener('click', ()=>{
+                    cute.classList.add("expand");
+                    setTimeout(()=>{
+                        cute.classList.remove("expand");
+                    }, 500)
+                })
             }
         </script>
 
@@ -79,14 +90,14 @@
             <div id="dashboard"> 
                 <div class="slidecontainer">
                     <h4 class="slider-title">Fast</h4>
-                    <input type="range" min="30" max="300" value="100" class="slider" id="speed">
+                    <input type="range" min="10" max="300" value="50" class="slider" id="speed">
                     <h4 class="slider-title">Slow</h4>
                 </div>
             </div>
             <div id="sort-btns">
                 <div id="controll">
                     <select id="grid" class="sort-reset">
-                        <option value="3">3x3</option>
+                        <option value="3">3 x 3</option>
                         <option value="6">6x6</option>
                         <option value="9">9x9</option>
                         <option value="12">12x12</option>
