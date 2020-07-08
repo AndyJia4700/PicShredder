@@ -28,7 +28,7 @@ h1{
     transition-duration: 200ms;
     transition-timing-function: ease-out;
     pointer-events: none;
-    /* z-index: -1; */
+    z-index: 11;
     backdrop-filter: blur(3px);
     animation: cursorAnim1 .5s infinite alternate; 
 }
@@ -40,7 +40,6 @@ h1{
     position: absolute;
     border: 10px solid rgb(138, 225, 138);
     border-radius: 50%;
-    /* opacity: .5; */
 }
 
 .expand {
@@ -71,11 +70,16 @@ h1{
     }
 }
 
+
 .contact-github{
     background:url(../dist/images/github.png);
     padding:20px;
     background-repeat:no-repeat;
     background-size:contain
+}
+
+.contact-github:hover{
+    transform: scale(1.5);
 }
 
 .contact-linkedin{
@@ -85,11 +89,19 @@ h1{
     background-size:contain
 }
 
+.contact-linkedin:hover{
+    transform: scale(1.5);
+}
+
 .contact-angellist{
     background:url(../dist/images/angellist.png);
     padding:20px;
     background-repeat:no-repeat;
     background-size:contain
+}
+
+.contact-angellist:hover{
+    transform: scale(1.5);
 }
 
 #image{
@@ -111,13 +123,14 @@ h1{
 }
 
 #child-img{
-    margin-right:4px
+    margin-right:2px;
+    margin-top: -3px;
 }
 
 #child-img-ul{
     padding:20px;
     border:5px solid black;
-    width:580px;
+    width:540px;
     border-radius: 50px;
     text-align:center;
     position:relative;
