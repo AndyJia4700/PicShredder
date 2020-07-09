@@ -15,10 +15,8 @@
     <nav id="nav">
         
         <h1>PicShredder</h1>
-
         
         <div class="logo">
-           
             <a href="https://github.com/AndyJia4700" >
             <div class="contact-github"></div>
             </a>
@@ -27,11 +25,16 @@
                 <div class="contact-linkedin"></div> 
             </a>
 
-            <a href="">
+            <a href="https://angel.co/u/hj-jia">
                 <div class="contact-angellist"></div>
             </a>
         </div>
+
     </nav>
+
+    <!-- <div>
+        <img src="./dist/images/wow.gif" alt="" id="wow">
+    </div> -->
 
     <div class="main-div">
 
@@ -40,22 +43,19 @@
             </div>
         </div>
         
-        <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
+        <!-- <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
         <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
-        <p><img id="parents-img" width="200" /></p>
+        <p><img id="parent-img" width="500" /></p>
     
         <script>
-            const image = document.getElementById('parents-img');
+            const image = document.getElementById('parent-img');
 
             const loadFile = function (event) {
                 image.src = URL.createObjectURL(event.target.files[0]);
                 image.append('src', image.src)
             };
 
-            imgData = getBase64Image(image);
-            localStorage.setItem('imagData', imgData);
-
-        </script>
+        </script> -->
 
         
         
@@ -100,16 +100,18 @@
             </div>
             <div id="sort-btns">
                 <div id="controll">
+                    <p>1. Select a grid</p>
                     <select id="grid" class="sort-reset">
-                        <option value="6">6x6</option>
-                        <option value="12">12x12</option>
-                        <option value="18">18x18</option>
-                        <option value="24">24x24</option>
-                        <option value="30">30x30</option>
+                        <option value="6"> 6 x 6 </option>
+                        <option value="12"> 12 x 12 </option>
+                        <option value="18"> 18 x 18 </option>
+                        <option value="24"> 24 x 24 </option>
+                        <option value="30"> 30 x 30 </option>
                     </select>
                 </div>
-
+                <p>2. Set grid / Reset grid</p>
                 <button id="shuffle-btn" class="sort-reset">SET / RESET</button>
+                <p>3. Try sort methods below</p>
             </div>
         </div>
 

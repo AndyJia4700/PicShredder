@@ -12,10 +12,12 @@ class canvas{
         img.addEventListener('change', function(){
             Window.localStorage.setItem('setImg', img.src);
         });
+
         let src = localStorage.getItem('setImg');
         if (src) img.src = src;
         
         this.ctx.drawImage(img, 0, 0, 500, 500);
+
         if (img.src) {
             this.chooseGrid();
         }
@@ -110,7 +112,6 @@ class canvas{
     }
 
 
-
     callback(x, y) {
        if(x < y) return -1;
         return 1;
@@ -176,14 +177,6 @@ class canvas{
 
     
     restore(arr){
-
-        // const speed = document.getElementById("speed");
-        // speed.addEventListener("change", function () {
-        //     localStorage.setItem("selRate", this.value);
-        // });
-        // let rate = localStorage.getItem("selRate");
-        // if (rate) speed.value = rate;
-
         let rate = document.getElementById("speed").value;
 
         for (let idx = 0; idx < arr.length; idx++) {
