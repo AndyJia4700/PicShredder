@@ -4,18 +4,54 @@ class canvas{
         this.canvas = document.getElementById('image');
         this.ctx = this.canvas.getContext('2d');
         this.chooseImage();
+        this.modal();
+    }
+
+    modal(){
+        const modalBtn = document.getElementById('modalBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        modalBtn.addEventListener('click', this.openModal);
+        closeBtn.addEventListener('click', this.closeModal);
+        window.addEventListener('click', this.clickOutside)
+    }
+    
+    openModal(){
+        const modal = document.getElementById('simpleModal');
+        modal.style.display = 'block';
+    }
+
+    closeModal(){
+        const modal = document.getElementById('simpleModal');
+        modal.style.display = 'none';
+    }
+
+    clickOutside(e){
+        const modal = document.getElementById('simpleModal');
+        if(e.target == modal){
+            modal.style.display = 'none';
+        }
     }
 
     chooseImage(){
+        
         const img = document.getElementById('parent-img');
-        // debugger;
+        
         img.addEventListener('change', function(){
             Window.localStorage.setItem('setImg', img.src);
         });
 
         let src = localStorage.getItem('setImg');
+        console.log(src);
         if (src) img.src = src;
-        
+            
+        // img.setAttribute('crossOrigin', 'anonymous');
+
+        // img.onload = function () {
+        //     // console.log('writing to local storage:\n' + imgData);
+        //     localStorage.setItem('ses_image', img);
+        //     // console.log('image stored');
+        // }
+
         this.ctx.drawImage(img, 0, 0, 500, 500);
 
         if (img.src) {
@@ -25,6 +61,7 @@ class canvas{
 
     chooseGrid(){
         const grid = document.getElementById("grid");
+        
         grid.addEventListener("change", function () {
             localStorage.setItem("selValue", grid.value);
         });
@@ -37,6 +74,7 @@ class canvas{
 
     
     clickCropImage(grid){
+        if (!grid) grid = 1;
         const dalta = 0;
         const canvasH = this.canvas.clientHeight;
         const canvasW = this.canvas.clientWidth;
@@ -44,6 +82,7 @@ class canvas{
         let i = 0;
         
         const ul = document.createElement('ul')
+        // console.log(grid);
         ul.id = "child-img-ul"
         
         document.getElementById("dashboard").append(ul);

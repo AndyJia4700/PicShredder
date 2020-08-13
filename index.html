@@ -10,12 +10,24 @@
 </head>
 
 
-<body>
 
+
+<body>
+    
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <span id="closeBtn">&times;</span>
+            <h3>Hello, this is PicShredder</h3>
+            <p>Hello...I am a modal</p>
+            <button id="initial-setup">Start!</button>
+        </div>
+    </div>
+    
     <script src="./dist/main.js"></script>
     <nav id="nav">
         
         <h1>PicShredder</h1>
+        <button id="modalBtn" class="button">How this work</button>
         
         <div class="logo">
             <a href="https://github.com/AndyJia4700" >
@@ -58,7 +70,6 @@
 
         </script> -->
 
-        
         
         <audio src="./dist/images/bgm.mp3" id="bgm"></audio>
 
@@ -103,6 +114,7 @@
                 <div id="controll">
                     <p>1. Select a grid</p>
                     <select id="grid" class="sort-reset">
+                        <option value=""> Choose </option>
                         <option value="6"> 6 x 6 </option>
                         <option value="12"> 12 x 12 </option>
                         <option value="18"> 18 x 18 </option>
