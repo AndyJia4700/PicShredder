@@ -71,6 +71,10 @@ h1{
     }
 }
 
+.ins-p{
+    font-size: 18px;
+}
+
 
 .contact-github{
     background:url(../dist/images/github.png);
@@ -189,9 +193,19 @@ h1{
     appearance:none;
     width:25px;
     height:25px;
-    background:#020202;
+    background:rgb(59, 7, 249);
     cursor:pointer;
-    border-radius:30px
+    border-radius:30px;
+}
+
+.slider-dot{
+    width:25px;
+    height:25px;
+    background:rgb(59, 7, 249);
+    cursor:pointer;
+    border-radius:30px;
+    opacity:0.7;
+    border: 0;
 }
 
 .slider::-moz-range-thumb{
@@ -244,7 +258,11 @@ h1{
     color:white;
     padding-top:5px;
     padding-bottom:5px;
-    width:100px
+    width:100px;
+}
+
+.sort-reset:hover{
+    background-color: rgba(74, 71, 71, 0.5);
 }
 
 .dash-div{
@@ -257,6 +275,7 @@ h1{
 
 .button{
     background-color: rgb(238, 87, 99);
+    /* background-image: url(../dist/images/portal.gif); */
     font-size: 20px;
     color: #fff;
     border: 0;

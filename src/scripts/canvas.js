@@ -41,16 +41,7 @@ class canvas{
         });
 
         let src = localStorage.getItem('setImg');
-        console.log(src);
         if (src) img.src = src;
-            
-        // img.setAttribute('crossOrigin', 'anonymous');
-
-        // img.onload = function () {
-        //     // console.log('writing to local storage:\n' + imgData);
-        //     localStorage.setItem('ses_image', img);
-        //     // console.log('image stored');
-        // }
 
         this.ctx.drawImage(img, 0, 0, 500, 500);
 
@@ -82,7 +73,6 @@ class canvas{
         let i = 0;
         
         const ul = document.createElement('ul')
-        // console.log(grid);
         ul.id = "child-img-ul"
         
         document.getElementById("dashboard").append(ul);
